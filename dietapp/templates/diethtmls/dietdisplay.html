@@ -1,0 +1,29 @@
+{% extends 'diethtmls/base.html' %}
+{% load static %}
+
+{% block title %}Diet Display{% endblock %}
+{% block content %}
+<div class="container-fluid mt-4" style="position: relative; height: 100vh; overflow: hidden;">
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <source src="{% static 'images/icons/dv.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="row mx-2">
+    {% for i in a %}
+    <div class="col-md-3 my-1">
+      <div class="card shadow-lg border border-success h-100">
+        <div class="card-body">
+          <h5>{{i.0}} <span class="float-right"><img src="{{i.5.url}}" height="70px" width="70px"></span></h5>
+          <h6>{{i.1}}</h6>
+          <h6>{{i.4}}</h6>
+          <h6>{{i.3}}</h6>
+          <h6>{{i.2}} <a href="{% url 'dreq' i.6 %}"><span class="btn btn-success float-right">{{i.6}} Request</span></a></h6>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

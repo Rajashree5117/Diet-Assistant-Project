@@ -1,0 +1,8 @@
+.background {
+    /* background-image: url('path/to/your/image.jpg'); */
+    background-image: url('/static/images/icons/logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Adjust as needed */
+}

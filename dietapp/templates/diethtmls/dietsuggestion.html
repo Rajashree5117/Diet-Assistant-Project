@@ -1,0 +1,69 @@
+{% extends 'diethtmls/base.html' %}
+{% load static %}
+
+{% block title %}DietSuggestions{% endblock %}
+{% block content %}
+<div class="container-fluid mt-4" style="position: relative; height: 100vh; overflow: hidden;">
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <source src="{% static 'images/icons/ds.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container mt-4" style="position: relative; z-index: 1;">
+    <div class="row">
+      <div class="col-md-3 card shadow-lg mx-2 h-100">
+        <div class="card-body">
+          <h4>Add DietSuggestions</h4>
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for i in p %}
+              {{ i }}
+            {% endfor %}
+            <div class="row my-2">
+              <div class="col">
+                <input type="reset" value="Clear" class="form-control btn btn-outline-danger">
+              </div>
+              <div class="col">
+                <input type="submit" value="Add Diet" class="form-control btn btn-outline-success">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md card shadow-lg mx-2 h-100">
+        <div class="card-body">
+          <h4>DietSuggestions</h4>
+          <table class="table">
+            <tr>
+              <th>Sno</th>
+              <th>age</th>
+              <th>bmi</th>
+              <th>Subject</th>
+              <th>Actions</th>
+            </tr>
+            {% for j in z %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td>{{ j.age }}</td>
+              <td>{{ j.bmi }}</td>
+              <td>{{ j.subject }}</td>
+              <td>
+                <div class="row">
+                  <div class="col">
+                    <a href="" class="btn btn-outline-info form-control">Edit</a>
+                  </div>
+                  <div class="col">
+                    <a href="" class="btn btn-outline-danger form-control">Delete</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

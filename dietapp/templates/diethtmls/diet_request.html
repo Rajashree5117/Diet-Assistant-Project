@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet Request</title>
+</head>
+<body>
+    <h1>Request a Diet Plan</h1>
+    <form method="POST" action="{% url 'diet_request' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

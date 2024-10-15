@@ -1,0 +1,18 @@
+{% extends 'diethtmls/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+ 
+  <div class="jumbotron" style="background-image: url('{% static 'images/icons/3.png' %}'); background-size: cover; background-position: center;">
+    
+
+    <video width="1050" height="560" controls>
+        <source src="{% static 'images/icons/11.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+{% endblock %}
