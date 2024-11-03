@@ -36,4 +36,4 @@ The **Diet Assistant App** is a Django-based web application that allows users t
 - **Frontend**: HTML5, CSS3, Bootstrap
 - **Database**: SQLite (development)
 - **Messaging System:** Django Models
-
+**https://docs.google.com/presentation/d/1UwCturmkRN-B47CMkl3JVoMDj-VgDhtW/edit?usp=drive_link&ouid=100018126142864796718&rtpof=true&sd=true**
